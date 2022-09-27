@@ -35,6 +35,7 @@ public class MyListArrayTest {
         testList.pop();
         testList.pop();
         Assertions.assertEquals(null, testList.pop());
+        Assertions.assertEquals(0, testList.getCount());
     }
 
     @Test

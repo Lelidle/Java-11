@@ -74,7 +74,7 @@ public class MyListArray {
             return null;
         }
         Human toReturn = queue[0];
-        for(int i = 0; i < count; i++){
+        for(int i = 0; i < count - 1; i++){
             queue[i] = queue[i+1];
         }
         queue[queue.length-1] = null;
@@ -86,7 +86,7 @@ public class MyListArray {
      * removes the first element of the list, if present
      */
     public void popNoReference() {
-        for(int i = 0; i < count; i++){
+        for(int i = 0; i < count - 1; i++){
             queue[i] = queue[i+1];
         }
         queue[queue.length-1] = null;
