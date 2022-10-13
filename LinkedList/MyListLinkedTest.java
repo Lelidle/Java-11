@@ -33,7 +33,7 @@ public class MyListLinkedTest {
     @Test
     void testPop() {
         Human h = new Human("Dave", 19);
-        Assertions.assertEquals(h, testList.pop());
+        Assertions.assertEquals(h.getName(), testList.pop()).getName();
         testList.pop();
         testList.pop();
         testList.pop();
