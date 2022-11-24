@@ -1,6 +1,6 @@
 package ArrayListSolution;
 
-public class MyListArray {
+public class MyArrayList {
     
     private Human[] queue;
     private int count;
@@ -9,7 +9,7 @@ public class MyListArray {
      * Constructor for the List, internally represented as an array
      * @param length defines the length of the list
      */
-    public MyListArray(int length) {
+    public MyArrayList(int length) {
         queue = new Human[length];
         count = 0;
     }
@@ -181,8 +181,8 @@ public class MyListArray {
      * @param o Object has to be of type MyList to concatenate
      * @return returns the new concatenated list or the old one, if o is not of type MyList
      */
-    public Object concatenate(MyListArray toConcat) {
-        MyListArray newList = new MyListArray(this.count
+    public Object concatenate(MyArrayList toConcat) {
+        MyArrayList newList = new MyArrayList(this.count
             + toConcat.getCount());
         for(int i = 0; i < this.count;i++) {
             newList.getQueue()[i] = queue[i];

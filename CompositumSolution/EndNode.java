@@ -17,6 +17,7 @@ public class EndNode extends Node {
      */
     @Override
     public void printList() {
+        System.out.println("This is the end");
         return;    
     }
 

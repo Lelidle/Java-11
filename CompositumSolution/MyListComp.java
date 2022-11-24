@@ -15,11 +15,7 @@ public class MyListComp {
     * @param data the data that shall be appended
     */
     public void push(DataElement data) {
-        if(root instanceof EndNode){
-            root = new DataNode(root, data);
-        } else {
-            root.push(data);
-        }
+        root = root.push(data);
     }
 
     /**
@@ -27,6 +23,10 @@ public class MyListComp {
      * @return returns a reference to the former root
      */
     public DataElement pop() {
+        /*
+         * Alternative: print in the EndNode with a return null,
+         * would suit the compositum pattern better.
+         */
         if(root instanceof EndNode){
             System.out.println("No list, nothing to remove");
             return null;
@@ -42,11 +42,7 @@ public class MyListComp {
      * a dataelement
      */
     public void printList() {
-        if(root instanceof EndNode){
-            System.out.println("No list here to print!");
-        } else {
-            root.printList();
-        }
+        root.printList();
     }
 
     /**
@@ -143,11 +139,7 @@ public class MyListComp {
      * if the list is empty.
      */
     public Node findEnd(){
-        if(!(root instanceof EndNode)) {
-            return root.findEnd(root);
-        } else {
-            return null;
-        }
+        return root.findEnd(root);
     }
     
     /**
@@ -171,8 +163,9 @@ public class MyListComp {
      * @param data the data to fill the Node
      */
     public void setRoot(DataElement data) {
-        if(root == null) {
+        if(root instanceof EndNode) {
             root = new DataNode(root, data);
+            root.setNext(new EndNode());
         } else {
             Node newRoot = new DataNode(root, data);
             newRoot.setNext(root);
