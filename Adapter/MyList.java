@@ -15,11 +15,7 @@ public class MyList {
     * @param data the data that shall be appended
     */
     public void appendBack(DataElement data) {
-        if(root instanceof EndNode){
-            root = new DataNode(root, data);
-        } else {
-            root.appendBack(data);
-        }
+            root = root.appendBack(data);
     }
 
     /**
@@ -42,13 +38,7 @@ public class MyList {
      * @return returns a reference to the currently last element of the list.
      */
     public DataElement removeLast() {
-        if(root instanceof EndNode) {
-            System.out.println("No list, nothing to remove");
-            return null;
-        } else {
             return this.removeAtPosition(this.length());
-        }
-
     }
 
     /**
@@ -56,11 +46,7 @@ public class MyList {
      * a dataelement
      */
     public void printList() {
-        if(root instanceof EndNode){
-            System.out.println("No list here to print!");
-        } else {
-            root.printList();
-        }
+        root.printList();
     }
 
     /**

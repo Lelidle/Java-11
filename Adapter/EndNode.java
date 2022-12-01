@@ -17,6 +17,7 @@ public class EndNode implements Node {
      */
     @Override
     public void printList() {
+        System.out.println("No list here to print!");
         return;    
     }
 
